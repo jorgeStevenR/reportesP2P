@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app_demo:
+    build:
+      context: ./demo
+      dockerfile: Dockerfile
+    container_name: app_demo
+    mem_limit: 512m
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
