@@ -6,6 +6,6 @@ RUN mvn clean package -DskipTests
 
 # Etapa 2: Ejecutar la app
 FROM openjdk:21-jdk-slim
-COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app_demo.jar
+COPY --from=build /app/target/reports-0.0.1-SNAPSHOT.jar app_demo.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app_demo.jar"]
