@@ -16,13 +16,17 @@ public class MockReportClient implements ReportClient {
 
     @Override
     public List<Report> fetchReports() {
+        String longText = "Este es un informe muy detallado generado por el peer. Incluye múltiples métricas sobre el rendimiento del sistema, "
+            + "incluyendo carga promedio, uso de CPU por núcleo, estado de la memoria, procesos en ejecución, "
+            + "y recomendaciones para optimización. ".repeat(20); // genera texto de ~1000 palabras
+
         return List.of(
             new Report(UUID.randomUUID().toString(), "peer-A", ReportType.SYSTEM,
-                       "CPU 45 %, RAM 2 GB", LocalDateTime.now().minusMinutes(5)),
+                       longText, LocalDateTime.now().minusMinutes(5)),
             new Report(UUID.randomUUID().toString(), "peer-B", ReportType.SECURITY,
-                       "Sin vulnerabilidades", LocalDateTime.now().minusMinutes(3)),
+                       "Revisión completa del sistema. No se encontraron vulnerabilidades activas. Estado general: SEGURO.", LocalDateTime.now().minusMinutes(3)),
             new Report(UUID.randomUUID().toString(), "peer-C", ReportType.PERFORMANCE,
-                       "Latencia promedio 12 ms", LocalDateTime.now().minusMinutes(1))
+                       "Rendimiento óptimo. Tiempo promedio de respuesta: 11 ms. No se detectaron cuellos de botella.", LocalDateTime.now().minusMinutes(1))
         );
     }
 }

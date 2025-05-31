@@ -16,7 +16,7 @@
   <groupId>com.example</groupId>
   <artifactId>reports</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>reports</name>
+  <name>demo</name>
   <description>Peer-to-Peer Machine Reports UI</description>
 
   <properties>
